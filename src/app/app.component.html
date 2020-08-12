@@ -1,0 +1,21 @@
+<div class="container">
+  <app-cockpit (addedServer)="serverCreated($event)" (addedBPServer)="bluePrintCreated($event)"></app-cockpit>
+  <div class="row">
+    <div class="col-xs-12">
+      <button
+      class="btn btn-primary"
+      (click)="changeNameOfFirstElement($event)">Change Name First Element</button>
+      <button
+      class="btn btn-danger"
+      (click)="destroyFirstElement($event)">Destroy First Element</button>
+      <app-server-element *ngFor="let element of serverElements" [serverElement]="element" [name]="element.name">
+        <div class="panel-body" #panelBodyId>
+          <p>
+            <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
+            <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
+          </p>
+        </div>
+      </app-server-element>
+    </div>
+  </div>
+</div>
