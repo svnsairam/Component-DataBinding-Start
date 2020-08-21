@@ -16,7 +16,7 @@ export class CockpitComponent implements OnInit {
   // newServerName = '';
   // newServerContent = '';
   onAddServer(nameInput:HTMLInputElement){
-
+    console.log("added server--------------");
     console.log(nameInput);
     console.log(nameInput.value);
     this.addedServer.emit({
@@ -25,6 +25,7 @@ export class CockpitComponent implements OnInit {
     });
   }
   onAddBlueprint(nameInput:HTMLInputElement){
+    console.log("added blue print server--------------");
     console.log(this.serverContentRef);
     console.log(nameInput);
     this.addedBPServer.emit({
